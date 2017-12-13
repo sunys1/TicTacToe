@@ -86,15 +86,13 @@ namespace TicTacToe
                 {
                     label1.Text = " X wins!!!";
                     scoreX++;
-                    X.Text = "X: " + scoreX;
-                    O.Text = "O: " + scoreO;
+                    SetScore();
                 }
                 else
                 {
                     label1.Text = " O Wins!!!";
                     scoreO++;
-                    X.Text = "X: " + scoreX;
-                    O.Text = "O: " + scoreO;
+                    SetScore();
                 }
 
                 button1.Enabled = false;
@@ -113,6 +111,12 @@ namespace TicTacToe
             }
 
         }
+        
+        public void SetScore()
+        {
+            X.Text = "X: " + scoreX;
+            O.Text = "O: " + scoreO;
+        }
 
         private void New(object sender, EventArgs e)
         {
@@ -122,8 +126,7 @@ namespace TicTacToe
         private void Reset(object sender, EventArgs e)
         {
             scoreX = scoreO = 0;
-            X.Text = "X: " + scoreX;
-            O.Text = "O: " + scoreO;
+            SetScore();
             buttonControl();
         }
         public void buttonControl()
